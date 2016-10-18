@@ -1,0 +1,178 @@
+
+ /*File: http://www.cs.uml.edu/~njiandan/css/stle.css
+ 91.461 Assignment: Creating Your First Web Page
+ Naman Jiandani, UMass Lowell Computer Science, njiandan@cs.uml.edu
+ Copyright (c) 2016 by Naman Jiandani. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+
+This page styles my index.html page (index.html is a brief introduction to my personal and professional interests.
+You can also take a peek at what I've been upto for the recent years by 
+checking out or downloading my resume from there)
+
+Updated by NJ on Oct 2, 2016 at 11:33 pm 
+
+Dependancies :
+1.Backgroud image - http://cdn.pcwallart.com/images/colorado-mountain-landscape-wallpaper-1.jpg
+ */
+
+body{
+	background-color:black;
+	background-image:url("http://cdn.pcwallart.com/images/colorado-mountain-landscape-wallpaper-1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+/* this container has the space for two-liner introduction to myself */
+.container0{
+    height: 677px;
+    width: 100%;
+    background-color: transparent;
+}
+
+/* styling for "Hi! Im Naman" */
+.widgetHeader {
+	width: 100%;
+	height: 50px;
+    margin: 83px auto 10px auto;
+	font-size: 22px;
+	font: normal normal normal 50px anton, sans-serif;
+	text-align: center;
+	padding-top: 200px;
+	color: white;
+}	
+
+/* styling for the line "Programmer, Data Enthusiast, Entreprenuer, Avid Student of Life " */
+.widgetSubHeader  {
+    width: 100%;
+    padding-top: 10px; 
+    padding-bottom:10px; 
+    margin-top: 14px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+    margin-top: 14px;
+    font-size: 10px;
+    font: normal normal normal 25px anton, sans-serif;
+}
+
+/* styling to display the assignments href's horizontally */
+.navigationBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.27);
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgba(51, 51, 51, 0.43);
+}
+
+
+.container1 {
+    min-width: 500px;
+    min-height: 200px;
+    /*height: 300px;
+    width: 80%;*/
+    background-color: #c3bfbf;
+    padding-top: 2px;
+    margin-left: 120px;
+    margin-right: 76px;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-style: inset;
+    border-color: #d8cdcd;
+    opacity: 0.94;
+    border-width: 2px;
+}
+
+.container1content{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom:10px; 
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+    margin-top: 14px;
+    font-size: 10px;
+    font: normal normal normal 20px anton, sans-serif
+}
+
+
+/* ignore this for now, I was trying to add an icon to indicate that I want the user to scroll down */
+.scroll{
+	height: 349px;
+    width: 100%;
+    background-color: transparent;
+}
+
+
+.scrollImg{
+	height: 163px;
+    width: 144px;
+    background-image: url("https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-128.png");
+    margin-left: 551px;
+}
+
+p{
+	padding-top: 10px;
+}
+
+#newColor{
+	color:#616161;
+}
+
+
+
+/* empty container for extra scroll space */
+.container2{
+	width:100%;
+	height:1000px;
+	background-color: transparent;	
+}
+
+
+/* styling for clickable resume button */
+.resumeLink{
+    height: 33px;
+    width: 182px;
+    color:white;
+    background-color: grey;
+    border-radius:3px;
+    text-decoration: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#de3c3c;
+}
+
+.resumeLink:link, .resumeLink:visited {
+    background-color: #d64949;
+    color: white;
+    padding: 41px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 14px;
+    margin-top:7px;
+}
+
+.resumeLink:hover, .resumeLink:active {
+    background-color: #de3c3c;
+}
