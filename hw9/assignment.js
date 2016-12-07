@@ -1,4 +1,17 @@
- var pieces = [
+ /*File: naman1255.github.io/hw9/assignment.js
+ 91.461 Assignment 9: Scrabble Implementation
+ Naman Jiandani, UMass Lowell Computer Science, njiandan@cs.uml.edu
+ Copyright (c) 2016 by Naman Jiandani. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+
+This page has all the JavaScript that builds the interactivity for the Assignment.html file
+
+Updated by NJ on December 6, 2016 at 11:00 pm 
+ */
+
+/* Creating a dictionary with given distribution and values */
+var pieces = [
                       {"letter":"A", "value":1,  "amount":9, "remaining":9},
                       {"letter":"B", "value":3,  "amount":2, "remaining":2},
                       {"letter":"C", "value":3,  "amount":2, "remaining":2},
@@ -27,6 +40,8 @@
                       {"letter":"Z", "value":10, "amount":1, "remaining":10},
                       {"letter":" ", "value":0,  "amount":2, "remaining":0}
                     ];
+
+        /* Creating variables to hold values for our elements (self descriptive element names) */
         var word = "";
         var score = 0;
         var totalScore = 0;
@@ -45,9 +60,10 @@
        // }
     });
          
-         
+         //refreshes all tiles in board (also creates them)
          refreshTiles();
-
+         
+         //check if word exists on submit, compute score
          $("#submitWordBtn").click(function(){
              if( dict.indexOf(word.toLowerCase()) < 0){
                 alert("there is no such word in dictionary called '" + word + "'"); 
@@ -60,13 +76,15 @@
              }
          });  
      });
-        
+
+        //reset all tiles on board and compute score
         function resetTiles(){
             refreshTiles();
             totalScore = 0;
             $("#totalScore").text("Total Score : " + totalScore);
         }
-
+        
+        //create our board by creating new tiles and appending them onto our board container
         function refreshTiles(){
             $("#scrabbleBoard").empty();
             for(i = 0; i < 15 ; i++){
@@ -79,12 +97,16 @@
                  }
              }
             
+         // functionality for dropping tiles onto open spaces on board
             $(".droppable").droppable({drop:function(event, ui){
+             // check if we can drop this tile
                  if ($(ui.draggable).parent().attr("id") != "tileBoard" )
+                  //else dont drop it
                      ui.draggable.draggable('option', 'revert', true);
                  else if ($(this).children().length > 0){
                      ui.draggable.draggable('option', 'revert', true);
                  }
+                 // only allow to drop on either side of already placed tiles
                  else{
                      if (distributedTiles.length < 7){
                          if ($(this).next().children().length > 0 || $(this).prev().children().length > 0){
@@ -99,7 +121,7 @@
                  }
              }});
             
-            
+            //generate random tiles for our hand
             $("#tileBoard").empty();
             for(i = distributedTiles.length; distributedTiles.length < 7; i++){
                 ltrObj = pieces[getRandomInt(0,26)]
@@ -111,7 +133,7 @@
                 ele = "<div class='piece draggable'>" + ltr.letter + "<sub>" + ltr.value + "</sub></div>";
                 $("#tileBoard").append($(ele)); 
             });
-            
+           
             $(".draggable").draggable();
             word = "";
             score = 0;
