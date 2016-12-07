@@ -63,9 +63,9 @@ function create_table(new_array) {
     }
     html += "</tr>";
 
-    for(var i = first_r; i <= last_r; i++){
+    for(var i = first_c; i <= last_c; i++){
 	html += "<tr><td class ='toprow'>" + i + "</td>";
-        for(var j = first_c; j <= last_c; j++) {
+        for(var j = first_r; j <= last_r; j++) {
             html += "<td class ='toprow'>" + (i * j) + "</td>";
         }
 	html += "</tr>";
