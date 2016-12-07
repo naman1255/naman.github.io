@@ -38,7 +38,8 @@
 
             #tileBoard{
                 float: left;
-                background-color: cadetblue;
+                background-color: #4CAF50;
+                border-radius: 3px;
             }
 
             #submitWordBtn, #reset, #fillHand{
