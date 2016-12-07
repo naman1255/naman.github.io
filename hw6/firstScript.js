@@ -16,12 +16,19 @@ function calculate() {
         alert("Please enter unique values for start and end row/col indices");
         return;
     }
-    
+	
+     //handles case when user enters greater number for row 1, lesser for row 2 (swaps them)
+    if(last_r < first_r) {
+        var temp1 = first_r;
+        first_r = last_r;
+        last_r = temp1;
+    }
+	
     //handles case when user enters greater number for column 1, lesser for column 2 (swaps them)
     if(last_c < first_c) {
-        var temp = first_c;
+        var temp2 = first_c;
         first_c = last_c;
-        last_c = temp;
+        last_c = temp2;
     }
 
     //foundational 1-D array
@@ -60,9 +67,9 @@ function create_table(new_array) {
     
     //alert for same input values for row/col
      if(last_c < first_c) {
-        var temp = first_c;
+        var temp3 = first_c;
         first_c = last_c;
-        last_c = temp;
+        last_c = temp3;
     }
     
     //creating a table 
