@@ -6,7 +6,7 @@
 function calculate() {
 	
     //getting input from user for row/col start and end values
-    var first_r = Number(document.getElementById('firstRow').value);
+    var first_r = document.getElementById('firstRow').value;
     var last_r = document.getElementById('lastRow').value;
     var first_c = document.getElementById('firstCol').value;
     var last_c = document.getElementById('lastCol').value;
