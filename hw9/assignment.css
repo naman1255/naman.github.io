@@ -34,12 +34,12 @@
                 font-size: 20px;
                 text-align: center;
                 padding: 5px;
-                background-color: #CDDC39;
+                background-color: antiquewhite;
             }
 
             #tileBoard{
                 float: left;
-                background-color: #4CAF50;
+                background-color: antiquewhite;
                 border-radius: 3px;
                 margin-top: 63px;
                 margin-bottom: 35px;
@@ -48,7 +48,7 @@
             #submitWordBtn, #reset, #fillHand{
                 cursor: pointer;
                 width: 135px;
-                background-color: #CDDC39;;
+                background-color: #CDDC39;
                 float: left;
                 font-size: 21px;
                 padding: 5px;
