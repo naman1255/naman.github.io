@@ -45,7 +45,7 @@ References:
 
 	<div class = "container2">
 
-		<form id="frm1" onsubmit = "return calculate();">
+		<form id="frm1" name="frm1">
 				<div class="col1 col">
 					<p class="aligner"></p>
 					<input type="number" name="first row" id="firstRow" placeholder = "COLUMN STARTS AT">
@@ -71,7 +71,7 @@ References:
 				<br>
 				
 				<div class="actions">
-				<input class = "submitButton" type="submit" value="Create Table!" onclick="calculate()">
+				<input class = "submitButton" type="submit" value="Create Table!" onclick="calculate();return false;">
 				</div>
             </form>
 		
