@@ -16,7 +16,8 @@ function calculate() {
         alert("Please enter unique values for start and end row/col indices");
         return;
     }
-    //handles case when user enters greater number for column 1, lesser for column 2 (swaps them)
+	
+    //handles case when user enters greater number for row 1, lesser for row 2 (swaps them)
     if(last_r < first_r) {
         var temp2 = first_r;
         first_r = last_r;
@@ -65,6 +66,26 @@ function create_table(new_array) {
     var first_c = Number(document.getElementById('firstCol').value);
     var last_c = Number(document.getElementById('lastCol').value);
     
+    //alert for same input values for row/col
+    if(first_r === last_r || first_c === last_c) {
+        alert("Please enter unique values for start and end row/col indices");
+        return;
+    }
+	
+  	
+    //handles case when user enters greater number for row 1, lesser for row 2 (swaps them)
+    if(last_r < first_r) {
+        var temp2 = first_r;
+        first_r = last_r;
+        last_r = temp;
+    }
+	
+    //handles case when user enters greater number for column 1, lesser for column 2 (swaps them)
+    if(last_c < first_c) {
+        var temp1 = first_c;
+        first_c = last_c;
+        last_c = temp;
+    }
     
     //creating a table 
     //adding a top-left empty element
