@@ -4,12 +4,24 @@
 */
 
 function calculate() {
+    
+    var first_r = document.getElementById('firstRow').value;
+    var last_r = document.getElementById('lastRow').value;
+    var first_c = document.getElementById('firstCol').value;
+    var last_c = document.getElementById('lastCol').value;
+		
+    if (first_r.includes('e') || 
+	first_c.includes('e') ||
+	last_r.includes('e')  ||
+	last_c.includes('e')) {
+    	return false;
+    }	
 	
     //getting input from user for row/col start and end values
-    var first_r = parseInt(document.getElementById('firstRow').value);
-    var last_r = parseInt(document.getElementById('lastRow').value);
-    var first_c = parseInt(document.getElementById('firstCol').value);
-    var last_c = parseInt(document.getElementById('lastCol').value);
+    var first_r = parseInt(first_r);
+    var last_r = parseInt(last_r);
+    var first_c = parseInt(first_c);
+    var last_c = parseInt(last_c);
 
     if (first_r === NaN || 
 	first_c === NaN ||
@@ -17,7 +29,7 @@ function calculate() {
 	last_c === NaN ) {
     	return false;
     }
-	
+	 
     //alert for same input values for row/col
     if(first_r === last_r || first_c === last_c) {
         alert("Please enter unique values for start and end row/col indices");
