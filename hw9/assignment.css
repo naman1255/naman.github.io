@@ -46,11 +46,13 @@
             #submitWordBtn, #reset, #fillHand{
                 cursor: pointer;
                 width: 135px;
-                background-color: aquamarine;
+                background-color: #CDDC39;;
                 float: left;
-                font-size: 25px;
+                font-size: 21px;
                 padding: 5px;
                 margin: 10px;
+                border-radius: 5px;
+                border: 1px solid green;
             }
 
             #score, #word, #totalScore{
