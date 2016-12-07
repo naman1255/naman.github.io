@@ -1,3 +1,20 @@
+ /*File: naman1255.github.io/hw9/assignment.css
+ 91.461 Assignment9 :Scrabble implementation
+ Naman Jiandani, UMass Lowell Computer Science, njiandan@cs.uml.edu
+ Copyright (c) 2016 by Naman Jiandani. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+
+This page styles my scrabble implementation page (Assignment.html)
+
+Updated by NJ on December 6, 2016 at 11:33 pm 
+
+Dependancies :
+1. Double Score Image : https://3a09223b3cd53870eeaa-7f75e5eb51943043279413a54aaa858a.ssl.cf3.rackcdn.com//technology_04_temp-1331196770-4f587362-620x348.jpg
+2. Triple Score Image : http://www.3xchemistry.com/images/new3xlogo.jpg
+*/         
+
+            /* Styling for the board */
             #scrabbleBoard{
                 width: 705px;
                 height: 705px;
@@ -5,7 +22,8 @@
                 float: left;
             }
 
-             #scoreBoard{
+            /* Styling for the right most container */
+            #scoreBoard{
                     width: 424px;
                     height: 705px;
                     background-color: rgb(112, 184, 112);
@@ -13,6 +31,7 @@
                     padding-left: 50px;
             }
 
+            /* Styling for the "hand of tiles" */
             .tileContainer{
                 height: 45px;
                 width: 45px;
@@ -20,11 +39,13 @@
                 float: left;
             }
 
+            /* Styling for each tile piece */
             .tile{
                 height: 45px;
                 width: 45px;
             }
 
+            /* Styling for each tile piece */
             .piece{
                 left: 0px;
                 right: 0px;
@@ -37,6 +58,7 @@
                 background-color: antiquewhite;
             }
 
+            /* Styling for each tile in the board */
             #tileBoard{
                 float: left;
                 background-color: antiquewhite;
@@ -45,6 +67,7 @@
                 margin-bottom: 35px;
             }
 
+            /* Styling for button controls in right most container */
             #submitWordBtn, #reset, #fillHand{
                 cursor: pointer;
                 width: 135px;
@@ -63,7 +86,8 @@
                 font-size: 25px;
                 padding: 5px 0px;
             }
-
+            
+            /* Styling for vertical game title on left*/
             #scrabble{
                     color: green;
                     width: 55px;
@@ -75,7 +99,8 @@
                     word-wrap: break-word;
                     margin-top: 13px;
             }
-
+            
+            /* Styling for 2X and 3X images*/
             .doubleScore{
                 background: url(https://3a09223b3cd53870eeaa-7f75e5eb51943043279413a54aaa858a.ssl.cf3.rackcdn.com//technology_04_temp-1331196770-4f587362-620x348.jpg);
                 background-size: 45px 45px;
