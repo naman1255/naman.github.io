@@ -8,7 +8,7 @@
              #scoreBoard{
                 width: 424px;
                 height: 705px;
-                background-color: beige;
+                background-color: rgba(159, 206, 161, 0.49);
                 float: left;
                 padding-left: 50px;
             }
