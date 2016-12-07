@@ -47,6 +47,8 @@ function create_table(new_array) {
     var first_r = new_array[2];
     var last_r = new_array[3];
     
+    var i,j;
+	
     //creating a table 
     //adding a top-left empty element
     //loop through entries for first row and fill into top row of form 
@@ -61,9 +63,9 @@ function create_table(new_array) {
     }
     html += "</tr>";
 
-    for(var i = first_r; i <= last_r; i++)
+    for(var i = first_r; i <= last_r; i++){
 	html += "<tr><td class ='toprow'>" + i + "</td>";
-        for(var j = first_c; j <= last_c; i++) {
+        for(var j = first_c; j <= last_c; j++) {
             html += "<td class ='toprow'>" + (i * j) + "</td>";
         }
 	html += "</tr>";
