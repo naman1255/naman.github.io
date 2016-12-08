@@ -204,14 +204,4 @@ var pieces = [
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         
-        function findScore(){
-            $.each(Array.from(word), function(idx, char){
-                console.log(char);
-                for(i = 0; i< pieces.length; i++){
-                    if (char == pieces[i].letter){
-                        score += pieces[i].value;
-                    }
-                }
-            });
-            return score;
-        }
+      
