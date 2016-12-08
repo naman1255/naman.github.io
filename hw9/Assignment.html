@@ -20,18 +20,20 @@ jQuery API plugin - https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.mi
     <!--<script src="dict.js"></script>-->
     <script type="text/javascript" src="assignment.js"></script>
     <body>
+        <div style="width: 1244px; margin: 38px auto">
         <!--container for left vertical text SCRABBLE-->
-        <div id="scrabble">SCRABBLE</div>
-        <!--container for the board-->
-        <div id="scrabbleBoard"> </div>
-        <!--container for controls - players hand, score, submit & reset buttons -->
-        <div id="scoreBoard">
-            <div id="tileBoard"></div>
-            <div id="word">Word : </div>
-            <div id="score">Score : </div>
-            <div id="totalScore">Total Score : </div>
-            <div id="submitWordBtn">Submit Word</div>
-            <div id="reset" onclick="resetTiles()" >Reset Board</div>
+            <div id="scrabble" style= "display:none">SCRABBLE</div>
+            <!--container for the board-->
+            <div id="scrabbleBoard" style= "display:none"> </div>
+            <!--container for controls - players hand, score, submit & reset buttons -->
+            <div id="scoreBoard" style= "display:none">
+                <div id="tileBoard"></div>
+                <div id="word">Word : </div>
+                <div id="score">Score : </div>
+                <div id="totalScore">Total Score : </div>
+                <div id="submitWordBtn">Submit Word</div>
+                <div id="reset" onclick="resetTiles()" >Reset Board</div>
+            </div>
         </div>
     </body>
 </html>
