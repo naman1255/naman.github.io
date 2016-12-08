@@ -49,6 +49,7 @@ var pieces = [
         var dict = [];
 
      $(document).ready(function(){
+
          $.get( "dict.txt", function( txt ) {
         // Get an array of all the words
         var words = txt.split( "\n" );
@@ -74,7 +75,13 @@ var pieces = [
                  $("#totalScore").text("Total Score : " + totalScore);
                  refreshTiles();
              }
-         });  
+         }); 
+
+		$("#scrabble").slideDown(1200);
+		$("#scrabbleBoard").fadeIn(1800);
+		$("#scoreBoard").fadeIn(2400);
+
+
      });
 
         //reset all tiles on board and compute score
