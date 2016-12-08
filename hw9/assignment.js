@@ -159,7 +159,7 @@ var pieces = [
             
              for(i = 0; i< pieces.length; i++){
                 if (letter == pieces[i].letter){
-                    if ($(this).hasClass('doubleScore'))
+                    if ($(ele).hasClass('doubleScore'))
                         score += pieces[i].value * 2;
                     else
                         score += pieces[i].value;
