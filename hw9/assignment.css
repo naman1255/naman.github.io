@@ -1,4 +1,4 @@
- /*File: naman1255.github.io/hw9/assignment.css
+  /*File: naman1255.github.io/hw9/assignment.css
  91.461 Assignment9 :Scrabble implementation
  Naman Jiandani, UMass Lowell Computer Science, njiandan@cs.uml.edu
  Copyright (c) 2016 by Naman Jiandani. All rights reserved. May be
@@ -18,7 +18,7 @@ Dependancies :
             #scrabbleBoard{
                 width: 705px;
                 height: 705px;
-                background-color: antiquewhite;
+                background-color: rgba(76, 175, 80, 0.85);
                 float: left;
             }
 
@@ -26,7 +26,7 @@ Dependancies :
             #scoreBoard{
                     width: 424px;
                     height: 705px;
-                    background-color: rgb(112, 184, 112);
+                    background-color: rgba(76, 175, 80, 0.85);
                     float: left;
                     padding-left: 50px;
             }
@@ -47,15 +47,16 @@ Dependancies :
 
             /* Styling for each tile piece */
             .piece{
-                left: 0px;
                 right: 0px;
                 position: relative;
-                width: 40px; 
+                width: 33px;
+                height: 33px;
                 float: left;
                 font-size: 20px;
                 text-align: center;
                 padding: 5px;
-                background-color: antiquewhite;
+                background-color: #f9dd89;
+                border: 1px solid #66bb6a;
             }
 
             /* Styling for each tile in the board */
@@ -69,18 +70,35 @@ Dependancies :
 
             /* Styling for button controls in right most container */
             #submitWordBtn, #reset, #fillHand{
-                cursor: pointer;
-                width: 135px;
-                background-color: #CDDC39;
-                float: left;
-                font-size: 21px;
-                padding: 5px;
-                margin: 10px;
-                border-radius: 5px;
-                border: 1px solid green;
+                  cursor: pointer;
+                  width: 135px;
+                    background-color: rgba(205, 220, 57, 0);
+                    float: left;
+                    font-size: 21px;
+                    padding: 5px;
+                    margin: 10px;
+                    border-radius: 5px;
+                    border: 1px solid green;
+                    margin-top: 35px;
+                    color: white;
+                    text-align: center;
+                    border-color: white;
+                    transition-duration: 0.5s;
+
             }
 
+  #submitWordBtn:hover, #reset:hover, #fillHand:hover{
+                  
+                    background-color: white;
+                    color: rgb(84, 148, 86);
+                    text-align: center;
+                    border-color: white;
+                    border-color:green;
+            }
+
+
             #score, #word, #totalScore{
+                color:white;
                 float: left;
                 width: 100%;
                 font-size: 25px;
@@ -102,7 +120,7 @@ Dependancies :
             
             /* Styling for 2X and 3X images*/
             .doubleScore{
-                background: url(https://3a09223b3cd53870eeaa-7f75e5eb51943043279413a54aaa858a.ssl.cf3.rackcdn.com//technology_04_temp-1331196770-4f587362-620x348.jpg);
+                background: url(2x.png);
                 background-size: 45px 45px;
             }
 
