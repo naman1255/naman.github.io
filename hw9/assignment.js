@@ -96,12 +96,16 @@ var pieces = [
         
         //create our board by creating new tiles and appending them onto our board container
         function refreshTiles(){
+	    //removing all children tiles of the board (we might have placed them earlier)
             $("#scrabbleBoard").empty();
+	    //creating a 15x15 board i-->rows  j-->columns
             for(i = 0; i < 15 ; i++){
                  for (j = 0 ; j<15; j++){
+		     //styling for 2X multiplier 
                      if(i==j || i+j == 14)
                         ele = "<div row='" + i + "' col='" + j + "' class='tileContainer droppable doubleScore'></div>";
                      else
+			 //styling regular cell    
                          ele = "<div row='" + i + "' col='" + j + "' class='tileContainer droppable'></div>";
                     $("#scrabbleBoard").append($(ele)); 
                  }
@@ -111,14 +115,16 @@ var pieces = [
             $(".droppable").droppable({drop:function(event, ui){
              // check if the tile to be droped is taken fron hand so that we can drop this tile
                  if ($(ui.draggable).parent().attr("id") != "tileBoard" )
-                  //else dont drop it
+                     //dont drop it if not from our hand
                      ui.draggable.draggable('option', 'revert', true);
+		     //dont drop if something is already dropped there
                  else if ($(this).children().length > 0){
                      ui.draggable.draggable('option', 'revert', true);
                  }
                  else{
                  // only allow to drop on either side of already placed tiles
                      if (distributedTiles.length < 7){
+			 //check if next-neighbour tile is empty or not - only drop if empty
                          if ($(this).next().children().length > 0 || $(this).prev().children().length > 0){
                              dropPiece(ui, this);
                          }
@@ -137,17 +143,20 @@ var pieces = [
             for(i = distributedTiles.length; distributedTiles.length < 7; i++){
                 ltrObj = pieces[getRandomInt(0,26)]
                 if (ltrObj.remaining > 0)
+		    //generating list of characters (tiles) in our hand	
                     distributedTiles.push(ltrObj);
             }
-            
+            //displaying all tiles in our hand container
             $.each(distributedTiles, function(idx, ltr){
                 ele = "<div class='piece draggable'>" + ltr.letter + "<sub>" + ltr.value + "</sub></div>";
                 $("#tileBoard").append($(ele)); 
             });
-           
+            //make all elements with class of draggable draggable
             $(".draggable").draggable();
+            //resetting all values of our game round		
             word = "";
             score = 0;
+	    //removing all tiles previously dropped on the board
             $("#scrabbleBoard").find(".piece").remove();
             $("#score").text("Score : " + score);
         }
@@ -155,20 +164,28 @@ var pieces = [
 	// place the dragged tile in the board
         function dropPiece(ui, ele){
             ui.draggable[0].removeAttribute("style");
-             $(ele).css("background","#fff");
+             //$(ele).css("background","#fff");
              $(ele).append(ui.draggable[0]);
+	     //finding letter in tile - first letter returned from .text()
              letter = $(ui.draggable[0]).text().substring(0,1);
              for(i = 0 ; i < distributedTiles.length; i++){
+		 //removing used tile from our hand using splice
                  if (distributedTiles[i].letter == letter){
                      distributedTiles.splice(i,1);
                      break;
                  }
              }
-             if ($(ui.draggable[0]).parent().next().children().length > 0)
-                word = letter + word;
-             else
-                 word += letter;
+	     //creating our word
+	     // .parent() returns wrapper tile container
+             //.next.children() returns child of neighhbour wrapper tile
+             if ($(ui.draggable[0]).parent().next().children().length > 0){
+		//prefix our letter to already created word     
+                word = letter + word;}
+             else{
+		 //suffix our letter to already created word 
+                 word += letter;}
             
+	     //checking if we landed on a 2X score multiplier tile and updating score
              for(i = 0; i< pieces.length; i++){
                 if (letter == pieces[i].letter){
                     if ($(ele).hasClass('doubleScore'))
@@ -177,6 +194,7 @@ var pieces = [
                         score += pieces[i].value;
                 }
             }
+            //displaying score and word on UI
             $("#score").text("Score : " + score);
             console.log(word);
             $("#word").text("Word : " + word);
