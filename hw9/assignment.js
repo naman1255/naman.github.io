@@ -49,9 +49,9 @@ var pieces = [
         var dict = [];
 
      $(document).ready(function(){
-
+	// load the words from file for dictationary
          $.get( "dict.txt", function( txt ) {
-        // Get an array of all the words
+        // create an array of all the words in file
         var words = txt.split( "\n" );
              dict = words;
         // And add them as properties to the dictionary lookup
@@ -72,11 +72,14 @@ var pieces = [
              }
              else{
                  totalScore += score;
+		 // display the total score 
                  $("#totalScore").text("Total Score : " + totalScore);
+		 // refresh the tiles in hand
                  refreshTiles();
              }
          }); 
 
+	     // animation on load of the page.
 		$("#scrabble").slideDown(1200);
 		$("#scrabbleBoard").fadeIn(1800);
 		$("#scoreBoard").fadeIn(2400);
@@ -84,7 +87,7 @@ var pieces = [
 
      });
 
-        //reset all tiles on board and compute score
+        //reset all tiles on board and compute score (reset the game)
         function resetTiles(){
             refreshTiles();
             totalScore = 0;
@@ -104,17 +107,17 @@ var pieces = [
                  }
              }
             
-         // functionality for dropping tiles onto open spaces on board
+         // functionality for dropping tiles onto open spaces on board (registering the drop event on the tile container)
             $(".droppable").droppable({drop:function(event, ui){
-             // check if we can drop this tile
+             // check if the tile to be droped is taken fron hand so that we can drop this tile
                  if ($(ui.draggable).parent().attr("id") != "tileBoard" )
                   //else dont drop it
                      ui.draggable.draggable('option', 'revert', true);
                  else if ($(this).children().length > 0){
                      ui.draggable.draggable('option', 'revert', true);
                  }
-                 // only allow to drop on either side of already placed tiles
                  else{
+                 // only allow to drop on either side of already placed tiles
                      if (distributedTiles.length < 7){
                          if ($(this).next().children().length > 0 || $(this).prev().children().length > 0){
                              dropPiece(ui, this);
@@ -123,7 +126,8 @@ var pieces = [
                              ui.draggable.draggable('option', 'revert', true);
                          }   
                         return;
-                     }   
+                     }
+		// if the 1st tile is getting dropped then allow it to be placed on any place
                   dropPiece(ui, this);     
                  }
              }});
@@ -147,7 +151,8 @@ var pieces = [
             $("#scrabbleBoard").find(".piece").remove();
             $("#score").text("Score : " + score);
         }
-
+	
+	// place the dragged tile in the board
         function dropPiece(ui, ele){
             ui.draggable[0].removeAttribute("style");
              $(ele).css("background","#fff");
