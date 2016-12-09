@@ -6,16 +6,13 @@
 freely copied or excerpted for educational purposes with credit to the
 author.
 
-This page styles my index.html page (index.html is a brief introduction to my personal and professional interests.
-You can also take a peek at what I've been upto for the recent years by 
-checking out or downloading my resume from there)
-
 Updated by NJ on November 2, 2016 at 11:33 pm 
 
 Dependancies :
 1.Backgroud image - http://cdn.pcwallart.com/images/colorado-mountain-landscape-wallpaper-1.jpg
  */
-
+ 
+/* common styling for the body */
 body{
 	background-color:black;
 	background-image:url("http://cdn.pcwallart.com/images/colorado-mountain-landscape-wallpaper-1.jpg");
@@ -40,10 +37,12 @@ body{
     background-color: rgba(51, 51, 51, 0.27);
 }
 
+/* styling for all list items */
 li {
     float: right;
 }
 
+/* styling for all a elements inside list items */
 li a {
     display: block;
     color: white;
@@ -52,6 +51,7 @@ li a {
     text-decoration: none;
 }
 
+/* styling for all a elements inside list items (on hover) */
 li a:hover {
     background-color: rgba(51, 51, 51, 0.43);
 }
@@ -63,6 +63,7 @@ li a:hover {
     color:rgb(243, 243, 243);
 }
 
+/* styling the input fields */
 input {
     width:130px;
     height:20px;
@@ -120,6 +121,7 @@ input {
     margin:0px auto;
 }
 
+/* styling the form (input field container)*/
 .frm1{
     margin: 30px 30px;
 }
