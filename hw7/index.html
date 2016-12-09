@@ -19,6 +19,7 @@ Dependencies :
 
 References:
 1. https://www.w3schools.com/jQuery
+2. Jose Flores 
  -->
 
 
@@ -28,13 +29,24 @@ References:
 	<meta charset="utf-8">
 	<link href="style.css" rel="stylesheet">
 	<title>Naman Jiandani's Home Page</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<sript src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="firstScript.js"></script>
+	<script
+	  src="https://code.jquery.com/jquery-1.12.4.min.js"
+	  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	  crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
+	<script type="text/javascript" src="firstScript.js"></script>
+	<!--jQuery UI validation -->
 	<script type="text/javascript">
+
+		/* selecting form frm1 to validate */
 		$(function(){       
-		    $('#frm1').validate({
+		    $("form[name='frm1']").validate({
+		    	/* creating the rules/constraints for each data input field */
+		    	/* required = true/false (is it mandatory to input in this field) */
+		    	/* number = true/false (does the input data have to be a number) */
+		    	/* range : permitted range of values to be accepted */
 		        rules: {
 		            firstRow: {
 		                required: true,
@@ -84,10 +96,11 @@ References:
 		        },
 		        
 		        /* This was to get my table to actually generate and display */
-		        submitHandler: function() {
+		        submitHandler: function(form) {
 		              calculate();
 		              return false;
-		        }});
+		        }
+		    });
 		});
 	</script>
 </head>
@@ -105,7 +118,7 @@ References:
 	</div>
 	<div class = "container2">
 
-		<form id="frm1" action="">
+		<form id="frm1" name="frm1" action="">
 			<div class = "alerts">
 				<div class="col1 col">
 					<p class="aligner"></p>
@@ -132,7 +145,7 @@ References:
 				<br>
 				
 				<div class="actions">
-				<input class = "submitButton" type="submit" value="Create Table!">
+				<button class = "submitButton" type="submit"> Create Table!</button>
 				</div>
 			</div>	
         </form>
@@ -146,7 +159,7 @@ References:
 	
 	<div id="multiplication_table"></div>
 
-    <br
+    
 
 
 </body>
