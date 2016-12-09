@@ -1,12 +1,27 @@
-/* 
- Authored by Naman Jiandani
- Last modified on November 13, 2016
+ /*
+ <!--File: http://naman1255.github.io/hw7/firstScript.js
+ 91.461 Assignment 7: jQuery form validation
+ Naman Jiandani, UMass Lowell Computer Science, njiandan@cs.uml.edu
+ Copyright (c) 2016 by Naman Jiandani. All rights reserved. May be
+freely copied or excerpted for educational purposes with credit to the
+author.
+
+Updated by NJ on December 7, 2016 at 10:00 pm 
+
+Dependencies :
+1.Backgroud image - http://cdn.pcwallart.com/images/colorado-mountain-landscape-wallpaper-1.jpg
+2.jQuery API plugin - https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
+
+References:
+1. https://www.w3schools.com/jQuery
+2. Jose Flores 
 */
 
 
 
 function calculate() {
     
+    //getting input field data
     var first_r = document.getElementById('firstRow').value;
     var last_r = document.getElementById('lastRow').value;
     var first_c = document.getElementById('firstCol').value;
@@ -32,6 +47,7 @@ function calculate() {
         last_c = temp2;
     }
    
+    //sending input data as parameters
     create_table([first_c, last_c, first_r, last_r]);
     return false;
 }
@@ -44,20 +60,18 @@ function create_table(new_array) {
     
     var i,j;
     
-    //creating a table 
-    //adding a top-left empty element
-    //loop through entries for first row and fill into top row of form 
-    
+
+    //container for table content    
     var html = "";
     
     html += "<table class='form'>";
-    
+    //creating the top row and left column of table
     html += "<tr ><td class='toprow'></td>";
     for(var i = first_r; i <= last_r; i++) {
         html += "<td class ='toprow'>" + i + "</td>";
     }
     html += "</tr>";
-
+    //generating the index multiplcation matrix
     for(var i = first_c; i <= last_c; i++){
     html += "<tr><td class ='toprow'>" + i + "</td>";
         for(var j = first_r; j <= last_r; j++) {
